@@ -30,12 +30,8 @@ jobs:
     #  run: sudo apt-get install  python-serial openjdk-9-jre
     - name: 4:Installation d’Open-SDK
       run: git clone --recursive https://github.com/pfalcon/esp-open-sdk.git
-    - name: 5:CD Open-SDK
-      run: 
            cd esp-open-sdk
            make STANDALONE=n
-    - name: 6:export-SDK
-      run: 
            export PATH=/home/chris/esp-open-sdk/xtensa-lx106-elf/bin:$PATH
     - name: Download sources d’ESP-LINK
       run: wget https://caron.ws/wp-content/uploads/telechargement/esp-link-3.2.47.alpha.zip
