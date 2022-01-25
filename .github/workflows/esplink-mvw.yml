@@ -37,8 +37,8 @@ jobs:
       run: git clone --recursive https://github.com/pfalcon/esp-open-sdk.git
     - name: cd
       run: cd /home/runner/work/esp-link-mvw/
-    - name: ls 
-      run: ls 
+    - name: ls /home/runner/work/esp-link-mvw/
+      run: ls /home/runner/work/esp-link-mvw/xtensa-lx106-elf/bin/
     - name: make
       run: make STANDALONE=n
     - name: export PATH
