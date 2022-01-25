@@ -1,4 +1,4 @@
-name: esplink-mvw
+name: esp8266
 
 on:
  # push:
@@ -36,9 +36,9 @@ jobs:
     - name: 4:Installation d’Open-SDK
       run: git clone --recursive https://github.com/pfalcon/esp-open-sdk.git
     - name: cd
-      run: cd /home/runner/work/esp-link-mvw/
-    - name: ls /home/runner/work/esp-link-mvw/
-      run: ls /home/runner/work/esp-link-mvw/esp-link-mvw/esp-open-sdk
+      run: cd /home/runner/work/esp8266/
+    - name: ls /home/runner/work/esp8266/
+      run: ls /home/runner/work/esp8266/esp8266/esp-open-sdk
    # - name: cp sdk
       #run: cp -r /home/runner/work/esp-link-mvw/esp-link-mvw/esp-open-sdk /home/runner/work/esp-link-mvw/esp-open-sdk
     - name: ls /home/runner/work/esp-link-mvw/
