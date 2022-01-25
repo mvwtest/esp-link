@@ -36,13 +36,13 @@ jobs:
     - name: 4:Installation d’Open-SDK
       run: git clone --recursive https://github.com/pfalcon/esp-open-sdk.git
     - name: ls
-      run: ls /home/runner/work/
+      run: /home/runner/work/esp-link-mvw/esp-link-mvw/
     - name: cd
-      run: cd /home/runner/work/esp-open-sdk
+      run: cd /home/runner/work/esp-link-mvw/esp-link-mvw/esp-open-sdk
     - name: make
       run: make STANDALONE=n
     - name: export PATH
-      run: export PATH=/home/runner/work/esp-open-sdk/xtensa-lx106-elf/bin:$PATH
+      run: export PATH=/home/runner/work/esp-link-mvw/esp-link-mvw/esp-open-sdk/xtensa-lx106-elf/bin:$PATH
     - name: Download sources d’ESP-LINK
       run: wget https://caron.ws/wp-content/uploads/telechargement/esp-link-3.2.47.alpha.zip
            unzip esp-link-3.2.47.alpha.zip
