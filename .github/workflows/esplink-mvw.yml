@@ -18,7 +18,7 @@ jobs:
     - name: set up JDK 11
       uses: actions/setup-java@v2
       with:
-        java-version: '9'
+        java-version: '11'
         distribution: 'adopt'
     - name: 1:install net-tools
       run: sudo apt-get install net-tools
@@ -35,14 +35,14 @@ jobs:
     #  run: sudo apt-get install  python-serial openjdk-9-jre
     - name: 4:Installation d’Open-SDK
       run: git clone --recursive https://github.com/pfalcon/esp-open-sdk.git
-    - name: cp
-      run: sudo cp -r ~/home/runner/work/esp-link-mvw/esp-link-mvw /* ~/home/runner/work/esp-link-mvw/
+    #- name: cp
+    #  run: sudo cp -r ~/home/runner/work/esp-link-mvw/esp-link-mvw /* ~/home/runner/work/esp-link-mvw/
     - name: cd
-      run: cd /home/runner/work/esp-link-mvw/
+      run: cd /home/runner/work/esp-link-mvw/ $$ make STANDALONE=n
     - name: ls 
       run: ls 
-    - name: make
-      run: make STANDALONE=n
+    #- name: make
+    #  run: make STANDALONE=n
     - name: export PATH
       run: export PATH=/home/runner/work/esp-link-mvw/esp-link-mvw/esp-open-sdk/xtensa-lx106-elf/bin:$PATH
     - name: Download sources d’ESP-LINK
