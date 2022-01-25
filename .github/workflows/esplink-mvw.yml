@@ -36,10 +36,10 @@ jobs:
     - name: 4:Installation d’Open-SDK
       run: git clone --recursive https://github.com/pfalcon/esp-open-sdk.git
     - name: ls
-      run: ls /home/runner/work/esp-link-mvw/esp-open-sdk/esp-open-sdk/
+      run: ls /home/runner/work/esp-link-mvw/esp-link-mvw
     - name: cd
       run: cd /home/runner/work/esp-link-mvw/esp-link-mvw/esp-open-sdk/
-    - name: ls sdk
+    - name: ls 
       run: ls 
     - name: make
       run: make STANDALONE=n
