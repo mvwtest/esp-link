@@ -39,6 +39,10 @@ jobs:
       run: cd /home/runner/work/esp-link-mvw/
     - name: ls /home/runner/work/esp-link-mvw/
       run: ls /home/runner/work/esp-link-mvw/esp-link-mvw/esp-open-sdk
+    - name: cp sdk
+      run: cp -r /home/runner/work/esp-link-mvw/esp-link-mvw/esp-open-sdk /home/runner/work/esp-link-mvw/esp-open-sdk
+    - name: ls /home/runner/work/esp-link-mvw/
+      run: ls /home/runner/work/esp-link-mvw/esp-open-sdk
     - name: make
       run: make STANDALONE=n
     - name: export PATH
