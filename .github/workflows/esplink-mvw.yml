@@ -1,0 +1,48 @@
+name: esplink-mvw
+
+on:
+ # push:
+ #   branches: [ master ]
+  #pull_request:
+  #  branches: [ master ]
+  workflow_dispatch:
+  repository_dispatch:
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: set up JDK 11
+      uses: actions/setup-java@v2
+      with:
+        java-version: '11'
+        distribution: 'adopt'
+    - name: 1:install net-tools
+      run: sudo apt-get install net-tools
+    - name: 2:Installation des dépendances
+      run: sudo apt-get install make unrar-free autoconf automake libtool gcc g++ gperf flex bison texinfo gawk ncurses-dev libexpat-dev python-dev python python-serial sed git unzip bash help2man wget bzip2
+    - name: 3:install other tools
+      run: sudo apt-get install libtool-bin curl zlib1g-dev openjdk-9-jre
+    - name: 4:Installation d’Open-SDK
+      run: git clone –recursive https://github.com/pfalcon/esp-open-sdk.git
+           cd esp-open-sdk
+           make STANDALONE=n
+           export PATH=/home/chris/esp-open-sdk/xtensa-lx106-elf/bin:$PATH
+    - name: Download sources d’ESP-LINK:
+      run: wget https://caron.ws/wp-content/uploads/telechargement/esp-link-3.2.47.alpha.zip
+           unzip esp-link-3.2.47.alpha.zip
+           cd esp-link-3.2.47.alpha
+           sudo curl -Ls http://s3.voneicken.com/xtensa-lx106-elf-20160330.tgx | tar Jxf –
+           sudo curl -Ls http://s3.voneicken.com/esp_iot_sdk_v2.1.0.tgx | tar -C .. -Jxf –
+           export XTENSA_TOOLS_ROOT=$PWD/xtensa-lx106-elf/bin/
+           make
+    #- name: Build Conversations (System)
+    #  run: ./gradlew assembleConversationsFreeSystemDebug
+    #- uses: actions/upload-artifact@v2
+      with:
+        name: esp-link-3.2.47.alpha-firmware
+        #path: ./build/outputs/apk/**/debug/Conversations-2.10.2-conversations-free-system-universal-debug.apk
+        path: /home/chris/esp-link-3.2.47.alpha/firmware
