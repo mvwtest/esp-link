@@ -23,9 +23,11 @@ jobs:
     - name: 1:install net-tools
       run: sudo apt-get install net-tools
     - name: 2:Installation des dépendances
-      run: sudo apt-get install make unrar-free autoconf automake libtool gcc g++ gperf flex bison texinfo gawk ncurses-dev libexpat-dev python-dev python python-serial sed git unzip bash help2man wget bzip2
+      run: sudo apt-get install make unrar-free autoconf automake libtool gcc g++ gperf flex bison texinfo gawk ncurses-dev libexpat-dev python-dev python sed git unzip bash help2man wget bzip2
     - name: 3:install other tools
       run: sudo apt-get install libtool-bin curl zlib1g-dev openjdk-9-jre
+    #- name: 4:Installation d’Open-SDK
+    #  run: sudo apt-get install  python-serial
     - name: 4:Installation d’Open-SDK
       run: git clone –recursive https://github.com/pfalcon/esp-open-sdk.git
            cd esp-open-sdk
