@@ -31,7 +31,7 @@ jobs:
            cd esp-open-sdk
            make STANDALONE=n
            export PATH=/home/chris/esp-open-sdk/xtensa-lx106-elf/bin:$PATH
-    - name: Download sources d’ESP-LINK:
+    - name: Download sources d’ESP-LINK
       run: wget https://caron.ws/wp-content/uploads/telechargement/esp-link-3.2.47.alpha.zip
            unzip esp-link-3.2.47.alpha.zip
            cd esp-link-3.2.47.alpha
