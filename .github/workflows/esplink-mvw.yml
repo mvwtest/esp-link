@@ -41,7 +41,7 @@ jobs:
            make
     #- name: Build Conversations (System)
     #  run: ./gradlew assembleConversationsFreeSystemDebug
-    #- uses: actions/upload-artifact@v2
+    - uses: actions/upload-artifact@v2
       with:
         name: esp-link-3.2.47.alpha-firmware
         #path: ./build/outputs/apk/**/debug/Conversations-2.10.2-conversations-free-system-universal-debug.apk
