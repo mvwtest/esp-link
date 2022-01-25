@@ -25,7 +25,7 @@ jobs:
     - name: 2:Installation des dépendances
       run: sudo apt-get install make unrar-free autoconf automake libtool gcc g++ gperf flex bison texinfo gawk ncurses-dev libexpat-dev python-dev python sed git unzip bash help2man wget bzip2
     - name: 3:install other tools
-      run: sudo apt-get install libtool-bin curl zlib1g-dev python-serial 
+      run: sudo apt-get install libtool-bin curl zlib1g-dev python-serial
       
     - name: ls
       run: ls /
@@ -38,7 +38,7 @@ jobs:
     - name: cd
       run: cd /home/runner/work/esp-link-mvw/
     - name: ls /home/runner/work/esp-link-mvw/
-      run: ls /home/runner/work/esp-link-mvw/esp-open-sdk/xtensa-lx106-elf/bin/
+      run: ls /home/runner/work/esp-link-mvw/esp-link-mvw/esp-open-sdk/xtensa-lx106-elf/bin/
     - name: make
       run: make STANDALONE=n
     - name: export PATH
